@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+input[type="range"] {
+  accent-color: #009a9c;
+}
+:root {
+  --btn-color: #009a9c;
+  --btn-ripple-color: #def8e8;
+}
+.btn1 {
+  color: var(--btn-ripple-color);
+  text-align: justify;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--btn-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+span {
+  z-index: -1;
+  position: absolute;
+  background: white;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: animate 0.5s infinite;
+}
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.1;
+  }
+  100% {
+    width: 230px;
+    height: 230px;
+    opacity: 0.3;
+  }
+}
+.disable_gen {
+  cursor: not-allowed;
+  background-color: rgb(197, 197, 197);
+  color: var(--btn-color);
+}
+.btn {
+  color: var(--btn-color);
+  text-align: justify;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: all 0.5s ease-in-out;
+}
+.btn::before {
+  content: "";
+  top: var(--y-pos);
+  left: var(--x-pos);
+  width: 0px;
+  height: 0px;
+  z-index: -1;
+  position: absolute;
+  background: var(--btn-color);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+.btn:hover::before {
+  width: 400px;
+  height: 400px;
+}
+.btn:hover {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+  color: #def8e8;
+}
+.disabled {
+  color: var(--btn-color);
+}
+
+.disabled:hover::before {
+  width: 0px;
+  height: 0px;
+}
+.disabled:hover {
+  --tw-drop-shadow: drop-shadow(0 0 #0000);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+  color: var(--btn-color);
+  cursor: not-allowed;
+}
+.selected {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+  color: #def8e8;
+  background-color: var(--btn-color);
+  color: var(--btn-ripple-color);
+}
+.selected:hover::before {
+  width: 0px;
+  height: 0px;
+}
+.selected:hover {
+  --tw-drop-shadow: drop-shadow(0 0 #0000);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
+  color: var(--btn-ripple-color);
+}

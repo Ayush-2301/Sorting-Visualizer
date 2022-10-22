@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="input.css" />
+  </head>
+  <body
+    class="grid grid-cols-[1.7fr,8.3fr] grid-rows-[8fr,2fr] w-full h-screen text-primary-color font-medium text-lg font-main-font subpixel-antialiased tracking-wide"
+  >
+    <!-- side bar -->
+    <header
+      class="flex flex-col flex-grow row-start-1 row-end-3 divide-y bg-sec-color border-r border-solid border-primary-color border-l-8 border-b-8 drop-shadow-lg z-[2]"
+    >
+      <p class="text-2xl font-bold tracking-wide lg:text-xl py-1 text-center">
+        Sorting Visualizer
+      </p>
+      <!-- size input -->
+      <div
+        class="flex flex-col justify-center items-center m-3 mt-1 mb-0 ml-0 px-3 pb-2 w-full"
+      >
+        <input
+          name="size"
+          type="range"
+          id="size_of_array"
+          min="20"
+          max="200"
+          step="1"
+          value="110"
+          class="m-2 mb-0 drop-shadow-lg"
+        />
+        <label for="size" class="flex items-center justify-center"
+          >Size of Array</label
+        >
+      </div>
+      <!-- speed input -->
+      <div
+        class="flex flex-col justify-center items-center p-3 pt-0 pb-2 w-full"
+      >
+        <input
+          name="speed"
+          type="range"
+          id="speed_of_algo"
+          min="1"
+          max="5"
+          step="1"
+          value="4"
+          class="flex m-2 mt-1 mb-0 drop-shadow-lg"
+        />
+        <label for="speed" class="flex items-center justify-center"
+          >Speed of Algorithm</label
+        >
+      </div>
+      <!-- generate array btn -->
+      <div class="w-full flex flex-col pl-0 pt-1 p-2 lg:text-sm">
+        <label for="generate" class="pl-4">Generate New Array</label>
+        <button
+          id="generate_array"
+          class="btn1 pl-5 p-2 w-3/5 rounded-r-full border-l-0 drop-shadow-md"
+          name="generate"
+        >
+          Generate
+        </button>
+      </div>
+      <!--  -->
+      <!-- sort buttons -->
+      <div class="wrapper divide-y lg:text-sm">
+        <!-- bubble sort btn -->
+        <div
+          class="max-w-xs w-full flex flex-col max-h-16 h-full justify-center"
+        >
+          <button
+            id="bubble"
+            class="btn pl-5 p-2 w-3/5 rounded-r-full border-l-0"
+          >
+            Bubble
+          </button>
+        </div>
+        <!-- selection sort btn -->
+        <div
+          class="max-w-xs w-full flex flex-col max-h-16 h-full justify-center"
+        >
+          <button
+            id="selection"
+            class="btn pl-5 p-2 w-3/5 rounded-r-full border-l-0"
+          >
+            Selection
+          </button>
+        </div>
+        <!-- insertion sort btn -->
+        <div
+          class="max-w-xs w-full flex flex-col max-h-16 h-full justify-center"
+        >
+          <button
+            id="insertion"
+            class="btn pl-5 p-2 w-3/5 rounded-r-full border-l-0"
+          >
+            Insertion
+          </button>
+        </div>
+        <!-- merge sort btn -->
+        <div
+          class="max-w-xs w-full flex flex-col max-h-16 h-full justify-center"
+        >
+          <button
+            id="merge"
+            class="btn pl-5 p-2 w-3/5 rounded-r-full border-l-0"
+          >
+            Merge
+          </button>
+        </div>
+        <!-- quick sort btn -->
+        <div
+          class="max-w-xs w-full flex flex-col max-h-16 h-full justify-center"
+        >
+          <button
+            id="quick"
+            class="btn pl-5 p-2 w-3/5 rounded-r-full border-l-0"
+          >
+            Quick
+          </button>
+        </div>
+        <!-- heap sort btn -->
+        <div
+          class="max-w-xs w-full flex flex-col max-h-16 h-full justify-center"
+        >
+          <button
+            id="heap"
+            class="btn pl-5 p-2 w-3/5 rounded-r-full border-l-0"
+          >
+            Heap
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- main container -->
+    <div id="main-container" class="cont flex bg-primary-color p-4"></div>
+    <!-- more info section -->
+    <section
+      class="flex col-span-2 col-start-2 py-0 p-6 bg-sec-color border-t border-primary-color border-solid text-xl divide-x border-b-8 drop-shadow-lg z-[2]"
+    >
+      <!-- time complexity -->
+      <div class="time-complex flex-grow p-3 pl-0 relative">
+        <p
+          class="bg-primary-color text-sec-color px-1 rounded-br-xl rounded-tl-xl text-center py-1 mb-1"
+        >
+          Time complexity
+        </p>
+        <div class="worst_case">Worst Case:</div>
+        <div class="average_case">Average Case:</div>
+        <div class="best_case">Best Case:</div>
+      </div>
+      <!-- space complexity -->
+      <div class="space complex flex-grow p-3 pl-5">
+        <p
+          class="bg-primary-color text-sec-color px-2 rounded-br-xl rounded-tl-xl text-center py-1 mb-1"
+        >
+          Space complexity
+        </p>
+        <div class="space_worst_case">Worst Case:</div>
+      </div>
+      <!-- more info -->
+      <div class="more info flex-grow p-3 pl-5">
+        <div
+          class="bg-primary-color text-sec-color px-2 rounded-br-xl rounded-tl-xl text-center py-1 mb-1"
+        >
+          More Info
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="js/app.js"></script>
+  <script src="js/style.js"></script>
+  <script src="js/bubble.js"></script>
+  <script src="js/selection.js"></script>
+  <script src="js/insertion.js"></script>
+  <script src="js/merge.js"></script>
+  <script src="js/quick.js"></script>
+  <script src="js/heap.js"></script>
+</html>
