@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "vite",
-    "build":"vite build",
-  "build-css":"tailwindcss build src/input.css -o public/output.css "
+  "build-css":"npx tailwindcss -i ./input.css -o ./output.css -w"
 
   },
   "keywords": [],
