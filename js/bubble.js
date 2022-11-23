@@ -1,5 +1,8 @@
 function bubble() {
-  console.log("bubble");
+  document.querySelector(".worst_case").innerText = "Worst Case: O(N^2)";
+  document.querySelector(".average_case").innerText = "Average Case: Θ(N^2)";
+  document.querySelector(".best_case").innerText = "Best Case: Ω(N)";
+  document.querySelector(".space_worst_case").innerText = "Worst Case: O(1)";
   counter_delay = 0;
   for (var i = 0; i < arr_size - 1; i++) {
     for (var j = 0; j < arr_size - i - 1; j++) {

@@ -41,9 +41,14 @@ function quicksort(s, e) {
   }
 }
 function quick() {
+  document.querySelector(".worst_case").innerText = "Worst Case: O(N^2)";
+  document.querySelector(".average_case").innerText =
+    "Average Case: Θ(N log N)";
+  document.querySelector(".best_case").innerText = "Best Case: Ω(N log N)";
+  document.querySelector(".space_worst_case").innerText =
+    "Worst Case: O(log N)";
   counter_delay = 0;
   quicksort(0, arr_size - 1);
-  console.log(grid_size);
   enable();
 }
 // #def8e8-unsorted color

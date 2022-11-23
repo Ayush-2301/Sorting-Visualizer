@@ -51,9 +51,13 @@ function mergesort(l, r) {
   }
 }
 function merge() {
+  document.querySelector(".worst_case").innerText = "Worst Case: O(N log N)";
+  document.querySelector(".average_case").innerText =
+    "Average Case: Θ(N log N)";
+  document.querySelector(".best_case").innerText = "Best Case: Ω(N log N)";
+  document.querySelector(".space_worst_case").innerText = "Worst Case: O(N)";
   counter_delay = 0;
   mergesort(0, arr_size - 1);
-  // console.log(grid_size);
   enable();
 }
 // #00e5ba -sorted color

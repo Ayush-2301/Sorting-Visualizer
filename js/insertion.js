@@ -1,4 +1,8 @@
 function insertion() {
+  document.querySelector(".worst_case").innerText = "Worst Case: O(N^2)";
+  document.querySelector(".average_case").innerText = "Average Case: Θ(N^2)";
+  document.querySelector(".best_case").innerText = "Best Case: Ω(N)";
+  document.querySelector(".space_worst_case").innerText = "Worst Case: O(1)";
   counter_delay = 0;
   var i, key, j;
   for (i = 1; i < arr_size; i++) {
